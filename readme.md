@@ -26,7 +26,7 @@ aquelas que ja nascem sabendo o que desejam fazer, e aqueles que mudam constante
 
 ## 3.1 Dados utilizados
 
-## 3.2 Arquitetura
+## 3.2 Arquitetura do Modelo
 
 Exemplo de arquitetura:
 ![Arquitetura](imgs/arquitetura.png)
@@ -36,9 +36,11 @@ Exemplo de arquitetura:
 Exemplo de visualizacao: 
 ![TSNE](imgs/tsne.png)
 
-# 4. Monetizacao 
+# 4. Arquitetura do Projeto
 
-## 4.1 Markeplace 
+# 5. Monetizacao 
+
+## 5.1 Markeplace 
 
 # Fontes
 

@@ -13,7 +13,7 @@ from openai.embeddings_utils import get_embedding
 app = Flask(__name__)
 
 def get_credentials():
-    os.environ['OPENAI_API_KEY'] = "aaa"
+    os.environ['OPENAI_API_KEY'] = "aaaa"
 
     openai.organization = 'bbbb'
     openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -34,7 +34,6 @@ def pergunta_chat_gpt(pergunta):
             {"role": "user", "content": f"{pergunta}"}
         ]
     )
-
 
     return completion.choices[0].message.content
 

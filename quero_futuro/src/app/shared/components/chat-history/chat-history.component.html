@@ -1,5 +1,5 @@
-<div class="chat-history">
-  <div class="chat-history__row" *ngFor="let item of messages">
+<div class="chat-history" id="scrollTarget">
+  <div class="chat-history__row" *ngFor="let item of _messages">
     <div
       class="chat-history__bubble-container chat-history__bubble-container--user"
       *ngIf="item.role === roleEnum.USER"
@@ -20,6 +20,4 @@
       </div>
     </div>
   </div>
-
-  <div class="chat-history__input"></div>
 </div>

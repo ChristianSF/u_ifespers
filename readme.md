@@ -48,7 +48,7 @@ Exemplo de visualização:
 
 # 4. Arquitetura do Projeto
 
-<p>Nosso front end foi desenvolvido utilizando o framework Angular em javascript, enquanto nosso backend foi implementado usando o framework flask em python.</p>
+<p>Nosso front end mobile first foi desenvolvido utilizando o framework Angular em javascript aplicando padrões como Smart e Dumb components. Esse padrão permite melhor separar a lógica de negócio dos componentes estilizados. Dessa forma é possível facilmente alterar a aparêcia da plataforma, até mesmo trocando completamente de biblioteca de UI ou design system. O front end utiliza o Angular Material e padrões como a sintaxe BEM para classes de SCSS. Nosso backend foi implementado usando o framework flask em python.</p>
 
 ![Arquitetura do projeto](imgs/arquitetura_projeto.png)
 <p>

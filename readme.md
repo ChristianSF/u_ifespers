@@ -1,18 +1,14 @@
 # 1. O Problema
 
-<p>A maioria das pessoas que buscam um curso de graducão, sabem como eh dificil escolher um curso. Eh uma decisao que pode levar anos para ser tomada, ou, ainda ha
-aquelas que ja nascem sabendo o que desejam fazer, e aqueles que mudam constantemente e podem acabar nao escolhendo o aquilo que realmente querem.</p>
+<p>Escolher uma profissão torna-se uma necessidade em determinada época de nossas vidas e os jovens têm grande dificuldade em fazer essa opção, principalmente porque o número de profissões aumenta cada vez mais e o mercado de trabalho torna-se cada vez mais exigente e competitivo.</p>
 
-<p>Muitos aqui acabam tendo que escolher a sua profissao muito novos, assim que terminam o ensino medio. Desde novos com uma responsabilidade gigante, escolher o que vao fazer para praticamente o resto de suas vidas.</p>
-
-
-...
+<p>Para isso será necessário que conheça suas habilidade, seus interesses e sua motivação. É aí que a QueroFuturp pode ser de grande ajuda, facilitando esse momento de escolha, auxiliando o jovem a compreender os vários fatores a considerar: aspectos pessoais, relacionais e sociais. Conhecendo todas essas variáveis ele terá mais condições para definir melhor sua escolha.</p>
 
 
 
 # 2. Evasão
 
-<p>Segundo estudos do <a href="https://www.semesp.org.br/mapa/edicao-11/brasil/evasao/">Instuto Semesp</a>, para cursos presenciais temos uma taxa de evasao de <b>30%</b> dos alunos de rede privada e de <b>18,4%</b> da rede publica, isso para o ano de 2019. Para os cursos de EAD, a taxa para a rede publica quase dobra, chegando a <b>31,6%.</b></p>
+<p>Segundo estudos do <a href="https://www.semesp.org.br/mapa/edicao-11/brasil/evasao/">Instituto Semesp</a>, para cursos presenciais temos uma taxa de evasao de <b>30%</b> dos alunos de rede privada e de <b>18,4%</b> da rede publica, isso para o ano de 2019. Para os cursos de EAD, a taxa para a rede publica quase dobra, chegando a <b>31,6%.</b></p>
 
 ![Evasao](imgs/evasao.png)
 

@@ -1,0 +1,111 @@
+.chat {
+  background-color: #18274e;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+
+  @media (max-width: 769px) {
+    background-image:url(../../../assets/caminho-bg.svg);
+}
+
+  background-image:url(../../../assets/caminho-bg-90dg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+
+  overflow: hidden;  
+  
+  &__profile{
+    background-color: #00a1b3;
+    // height: 10%;
+    width: 100%;
+
+    &--div{
+      padding: 1%;
+      display: flex;
+      align-items: stretch;
+    }
+
+    &--img {
+      height: 8vh;
+      margin-left: 3%;
+    }
+
+    &--title {
+      font-size: 3vh;
+      line-height: 3vh;
+      color: white;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 3%;
+    }
+
+    &--back {
+      color: #00a1b3;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: 3%;
+      background-color: white;
+    }
+  }
+
+  &__history-container {
+    @media (max-width: 769px) {
+      margin: 0;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 2% auto;
+    flex: 8;
+    height: 90%;
+    // padding: 20px;
+    // box-sizing: border-box;
+    box-shadow: 10px 5px 5px rgb(0 0 0 / 0.2);
+    max-width: 800px;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  &__history {
+    height: 100%;
+    background-color: whitesmoke;
+    // max-width: 800px;
+    width: 100%;
+    overflow-y: hidden;
+  }
+
+  &__botDiv{
+    width: 100%;
+  }
+
+  &__botDiv--input {
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: whitesmoke;
+    display: flex;
+    flex: 1;
+    // max-width: 800px;
+    // box-sizing: border-box;
+    // padding: 20px;
+  }
+
+  &__botDiv--input-field {
+    width: 100%;
+  }
+
+  &__botDiv--send-button {
+    background-color: whitesmoke;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

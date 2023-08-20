@@ -1,0 +1,45 @@
+*{
+    color: white;
+}
+
+.notfound {
+    height: 100%;
+    background-color: #18274e;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+
+        &--img {
+            height: 15vh;
+        }
+    }
+
+    &__container {
+        height: calc(var(--vh, 1vh) * 100);
+
+        @media (min-width: 769px) {
+            margin-left: 24vw;
+            margin-right: 24vw;
+        }
+
+        // background-color: red !important;
+        background-image:url(../../../assets/caminho-bg.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        color: white;
+        overflow: hidden;
+
+        &--div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70%;
+            font-size: 8vh;
+            line-height: 8vh;
+        }
+    }
+}

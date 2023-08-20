@@ -80,7 +80,22 @@ Em resumo, o fluxograma do projeto começa com a coleta de informações do usu�
 <p>Aumentar o número de usuários para as outras plataformas já existente da quero </p>
 
 
-# 6. Bibliotecas Necessarias (python)
+# 6. Testes Unitarios
+
+## 6.1 Backend
+
+* <a href='api/tests.py'>Testes.py</a>
+
+<p>Testes implementados ate o momento:</p>
+
+* Inicializacao do modelo de cluster <b>Kmeans</b>;
+* Leitura dos dados csv como pandas <b>DataFrame</b>;
+* ... 
+
+
+## 6.2 Frontend
+
+# 7. Bibliotecas Necessarias (python)
 
 * os;
 * pickle;

@@ -1,21 +1,29 @@
 <div class="chat">
-  <div class="chat__chat-container">
-    <div class="chat__history-container">
-      <div class="chat__history">
-        <app-chat-history [messages]="messages"></app-chat-history>
+  <div class="chat__history-container">
+    <div class="chat__profile">
+      <div class="chat__profile--div">
+        <img class="chat__profile--img" src="assets/assistente2.png" />
+        <p class="chat__profile--title">Assistente Quero</p>
+        <a class="chat__profile--back" mat-mini-fab aria-label="Voltar" href="/" >
+          <mat-icon>keyboard_backspace</mat-icon>
+        </a>
       </div>
     </div>
-
-    <form class="chat__input" [formGroup]="form">
-      <mat-form-field class="chat__input-field">
-        <input matInput placeholder="..." formControlName="message" />
-      </mat-form-field>
-
-      <div class="chat__send-button">
-        <button mat-icon-button (click)="sendMessage()">
-          <mat-icon>send</mat-icon>
-        </button>
-      </div>
-    </form>
+    <div class="chat__history">
+      <app-chat-history [messages]="messages"></app-chat-history>
+    </div>
+    <div class="chat__botDiv">
+      <form class="chat__botDiv--input" [formGroup]="form">
+        <mat-form-field class="chat__botDiv--input-field">
+          <input matInput placeholder="..." formControlName="message" />
+        </mat-form-field>
+  
+        <div class="chat__botDiv--send-button">
+          <button mat-icon-button (click)="sendMessage()">
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

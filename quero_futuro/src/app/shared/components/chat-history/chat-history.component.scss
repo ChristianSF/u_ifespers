@@ -20,10 +20,11 @@
   }
 
   &__bubble {
-    max-width: 200px;
+    max-width: 300px;
     background-color: lightgray;
     border-radius: 5px;
     padding: 10px 20px;
+    word-break: break-word;
   }
 
   &__shimmer-container {

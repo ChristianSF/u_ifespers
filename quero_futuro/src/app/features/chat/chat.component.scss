@@ -1,9 +1,16 @@
 .chat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: #18274e;
   height: 100vh;
+
+  &__chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
   &__history-container {
     display: flex;
@@ -14,16 +21,19 @@
   }
   &__history {
     height: 100%;
-    background-color: lightcyan;
+    background-color: whitesmoke;
     max-width: 800px;
     width: 100%;
   }
 
   &__input {
+    background-color: whitesmoke;
     display: flex;
     flex: 1;
     max-width: 800px;
     width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
   }
 
   &__input-field {

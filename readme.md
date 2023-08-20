@@ -31,10 +31,19 @@ aquelas que ja nascem sabendo o que desejam fazer, e aqueles que mudam constante
 Exemplo de arquitetura:
 ![Arquitetura](imgs/arquitetura.png)
 
+<br/>
+
 ## 3.3 Resultados
 
-Exemplo de visualizacao: 
+Exemplo de visualização: 
+
+<p>Cada <i><b>"x"</b></i> nesse grafico representa o centro de um cluster ou uma determinada "profissao" conforme novos dados sao adicionados, a.</p>
+
+<p>Para criar essa visualização, utilizamos o metodo de reducao dimensional chamado <a href="https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf?fbcl">t-SNE</a>, com ele a dimensao dos dados que possuimos caiu para apenas 2.</p>
+
 ![TSNE](imgs/tsne.png)
+
+<br/>
 
 # 4. Arquitetura do Projeto
 
@@ -42,9 +51,26 @@ Exemplo de visualizacao:
 
 ## 5.1 Markeplace 
 
+
+# 6. Bibliotecas Necessarias (python)
+
+* os;
+* pickle;
+* openai;
+* tiktoken;
+* numpy;
+* pandas;
+* sklearn;
+* flask;
+* matplotlib;
+* plotly;
+
+
+
 # Fontes
 
 * <a href="https://www.semesp.org.br/mapa/edicao-11/brasil/evasao/">Instuto Semesp</a>;
 * <a href="https://g1.globo.com/educacao/noticia/2022/01/02/quase-35-milhoes-de-alunos-evadiram-de-universidades-privadas-no-brasil-em-2021.ghtml">Quase 3,5 milhões de alunos evadiram de universidades privadas no Brasil em 2021</a>;
 * <a href="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings">Open IA Embeddings;</a>
 * <a href="https://www.sciencedirect.com/science/article/abs/pii/S1574013721000186">Conceptual and empirical comparison of dimensionality reduction algorithms (PCA, KPCA, LDA, MDS, SVD, LLE, ISOMAP, LE, ICA, t-SNE)</a>
+

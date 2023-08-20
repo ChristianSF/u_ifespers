@@ -1,0 +1,21 @@
+<div class="chat">
+  <div class="chat__chat-container">
+    <div class="chat__history-container">
+      <div class="chat__history">
+        <app-chat-history [messages]="messages"></app-chat-history>
+      </div>
+    </div>
+
+    <form class="chat__input" [formGroup]="form">
+      <mat-form-field class="chat__input-field">
+        <input matInput placeholder="..." formControlName="message" />
+      </mat-form-field>
+
+      <div class="chat__send-button">
+        <button mat-icon-button (click)="sendMessage()">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

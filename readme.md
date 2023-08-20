@@ -24,6 +24,8 @@
 
 ## 3.2 Arquitetura do Modelo
 
+
+
 Exemplo de arquitetura:
 ![Arquitetura](imgs/arquitetura.png)
 
@@ -42,6 +44,8 @@ Exemplo de visualização:
 <br/>
 
 # 4. Arquitetura do Projeto
+
+
 
 # 5. Monetizacao 
 

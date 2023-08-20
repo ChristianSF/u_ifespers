@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Message } from 'src/app/shared/interfaces/chat.interface';
 import { OnInit} from '@angular/core'
+import { RoleEnum } from 'src/app/shared/enums/chat.enum';
 
 @Component({
   selector: 'app-chat',
@@ -13,7 +14,7 @@ export class ChatComponent implements OnInit{
 
   @Input() messages!: Message[];
 
-  @Output() $sendMessage: EventEmitter<string> = new EventEmitter<string>();
+  @Output() $sendMessage: EventEmitter<Message[]> = new EventEmitter<Message[]>();
 
   constructor (private formBuilder: FormBuilder) {}
 
@@ -28,6 +29,14 @@ export class ChatComponent implements OnInit{
   }
 
   sendMessage(): void {
-    this.$sendMessage.emit(this.form.get('message')?.value);
+    this.$sendMessage.emit(
+      [
+        ...this.messages,
+        {
+          role: RoleEnum.USER,
+          content: this.form.get('message')?.value
+        }
+      ]
+    );
   }
 }

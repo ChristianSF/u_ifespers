@@ -9,5 +9,5 @@ import { RoleEnum } from '../../enums/chat.enum';
 })
 export class ChatHistoryComponent {
   roleEnum: typeof RoleEnum = RoleEnum;
-  @Input() messages!: Message[];
+  @Input() messages!: Message[] | null;
 }

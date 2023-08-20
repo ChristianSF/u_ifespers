@@ -27,7 +27,7 @@
 
 ## 3.2 Arquitetura do Modelo
 
-
+<a href='model/Ada_Embedding_Test.ipynb'>Analise exploratoria e treinamento do modelo;</a>
 
 Exemplo de arquitetura:
 ![Arquitetura](imgs/arquitetura.png)
@@ -48,6 +48,9 @@ Exemplo de visualização:
 
 # 4. Arquitetura do Projeto
 
+<p>Nosso front end foi desenvolvido utilizando o framework Angular em javascript, enquanto nosso backend foi implementado usando o framework flask em python.</p>
+
+![Arquitetura do projeto](imgs/arquitetura_projeto.png)
 <p>
 
 1. **Coleta de Informações Iniciais do Usuário**: O processo começa com a coleta de informações essenciais do usuário. Perguntamos ao usuário sobre seus interesses pessoais, habilidades, preferências de estilo de vida e como ele enxerga seu dia a dia de trabalho. Essas informações são cruciais para entendermos o perfil do usuário e suas preferências.

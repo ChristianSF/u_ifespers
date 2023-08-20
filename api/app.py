@@ -37,7 +37,6 @@ def pergunta_chat_gpt(pergunta):
         ]
     )
 
-
     return completion.choices[0].message.content
 
 def chat_gpt(descricao):

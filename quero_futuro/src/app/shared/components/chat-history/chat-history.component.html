@@ -1,0 +1,25 @@
+<div class="chat-history">
+  <div class="chat-history__row" *ngFor="let item of messages">
+    <div
+      class="chat-history__bubble-container chat-history__bubble-container--user"
+      *ngIf="item.role === roleEnum.USER"
+    >
+      <div class="chat-history__bubble">
+        {{ item.content }}
+      </div>
+    </div>
+    <div
+      class="chat-history__bubble-container chat-history__bubble-container--system"
+      *ngIf="item.role === roleEnum.SYSTEM"
+    >
+      <div class="chat-history__bubble" *ngIf="!item.loading">
+        {{ item.content }}
+      </div>
+      <div class="chat-history__shimmer-container" *ngIf="item.loading">
+        <div class="chat-history__shimmer"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-history__input"></div>
+</div>

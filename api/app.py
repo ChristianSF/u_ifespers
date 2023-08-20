@@ -13,9 +13,9 @@ from openai.embeddings_utils import get_embedding
 app = Flask(__name__)
 
 def get_credentials():
-    os.environ['OPENAI_API_KEY'] = "aaaa"
+    os.environ['OPENAI_API_KEY'] = "aaa"
 
-    openai.organization = 'bbb'
+    openai.organization = 'bbbb'
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def instancia_kmeans():
@@ -42,14 +42,13 @@ def chat_gpt(descricao):
 
     get_credentials()
 
+    print("chegou aqui")
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "user", "content": f"Baseado nessa profissao: {descricao}, retorne nomes de cursos e/ou graducacoes para poder alcancar isso."}
         ]
     )
-
-    print(completion.choices[0].message.content)
 
     return completion.choices[0].message.content
 
@@ -94,7 +93,7 @@ def recomenda(string):
 
     return new_df['nome_curso'].values
 
-@app.route('/descricao', methods=['POST'])
+@app.route('/profession', methods=['POST'])
 def process_array():
     try:
         data = request.get_json()
@@ -103,9 +102,10 @@ def process_array():
 
         result = recomenda(data)
     
-        string = chat_gpt(result)
+        #string = chat_gpt(result)
 
-        return string
+
+        return result[0]
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -119,7 +119,7 @@ def pergunta():
 
         string = pergunta_chat_gpt(data)
 
-        return string
+        return f"<p>{string}</p>"
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500

@@ -28,6 +28,8 @@ aquelas que ja nascem sabendo o que desejam fazer, e aqueles que mudam constante
 
 ## 3.2 Arquitetura do Modelo
 
+
+
 Exemplo de arquitetura:
 ![Arquitetura](imgs/arquitetura.png)
 
@@ -46,6 +48,8 @@ Exemplo de visualização:
 <br/>
 
 # 4. Arquitetura do Projeto
+
+
 
 # 5. Monetizacao 
 

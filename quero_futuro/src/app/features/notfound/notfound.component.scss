@@ -2,7 +2,7 @@
     color: white;
 }
 
-.home {
+.notfound {
     height: 100%;
     background-color: #18274e;
 
@@ -35,22 +35,10 @@
 
         &--div {
             display: flex;
-            align-items: stretch;
-            flex-direction: column;
-            justify-content: space-around;
+            font-size: 5rem;
+            align-items: center;
+            justify-content: center;
             height: 70%;
-        }
-
-        &--disabledButton {
-            color: white !important;
-            margin-left: 15vw;
-            margin-right: 15vw;
-        }
-
-        &--enabledButton {
-            margin-left: 15vw;
-            margin-right: 15vw;
-            color: #18274e !important;
         }
     }
 }

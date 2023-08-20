@@ -3,6 +3,7 @@ import pickle
 import openai
 import tiktoken
 import numpy as np
+import pandas as pd
 from sklearn.cluster import KMeans
 from flask import Flask, jsonify, request
 from openai.embeddings_utils import get_embedding, cosine_similarity
@@ -27,8 +28,7 @@ def define_modelo():
     return embedding_model, embedding_encoding, max_tokens
 
 
-def get_embedding(string):
-    embedding_model, embedding_encoding, max_tokens = define_modelo()
+def get_embedding(string, embedding_model):
 
     embedding = get_embedding(string, engine=embedding_model)
     
@@ -40,33 +40,49 @@ def get_matrix(embedding):
 
     return matrix
 
-def get_predict(matrix):
-
-    kmeans = instancia_kmeans()
+def get_predict(matrix, kmeans):
 
     predict = kmeans.predict(matrix)
 
-    return predict
+    return int(predict[0])
 
+def get_data():
+    df = pd.read_csv("../data/Model_embedding_Profissoes.csv")
 
-def recomenda():
-    pass
+    df = df[['nome_curso', 'descricao', 'cursos', 'Cluster']]
 
+    return df
 
-@app.route("/")
-def teste():
-    return "Hello World!"
+def recomenda(string):
+    get_credencials()
+
+    kmeans = instancia_kmeans()
+
+    embedding_model, embedding_encoding, max_tokens = define_modelo()
+
+    embedding = get_embedding(string, embedding_model)
+
+    matrix = get_matrix(embedding)
+
+    predict = get_predict(matrix, kmeans)
+
+    df = get_data()
+
+    new_df = df[df['Cluster'] == predict]
+
+    return new_df
 
 
 @app.route('/descricao', methods=['POST'])
 def process_array():
     try:
-        data = request.get_json()
-        if not isinstance(data, list):
+        string = request.get_json()
+        if not isinstance(string, list):
             return jsonify({'error': 'Invalid input. Expected an array.'}), 400
         
-        
-        return jsonify({'result': teste}), 200
+        result = recomenda(string)
+
+        return jsonify({'result': result}), 200
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500

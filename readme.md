@@ -19,8 +19,11 @@
 <p>Os motivos para que isso aconteca, sao diversos, desde trabalho, perca do emprego durantes esses anos, a falta de renda, falta de infraestrutura, <i><b>desvinculação em relação ao curso</i></b>.</p>
 
 # 3. A solução 
+<p>O projeto consiste na criação de um chatbot que interage com o usuário, compreendendo seus interesses pessoais, habilidades e estilo de vida, a fim de sugerir a profissão mais adequada. Além disso, o chatbot também oferece orientações sobre os cursos necessários para alcançar essa carreira desejada.</p>
+
 
 ## 3.1 Dados utilizados
+<p> Foi utilizado um banco de dados onde temos as profissões possíveis, suas descrições, e o cursos que levam a essas profissões.</p>
 
 ## 3.2 Arquitetura do Modelo
 
@@ -45,11 +48,19 @@ Exemplo de visualização:
 
 # 4. Arquitetura do Projeto
 
-
-
 # 5. Monetizacao 
 
 ## 5.1 Markeplace 
+<p>Taxa para universidades, plataforma de cursos, etc poderem anunciar seus cursos na plataforma da quero</p>
+
+## 5.2 Aumentos da base
+<p>Atração de um grande número de usuários, pessoas interessadas em construir uma carreira, aumentando assim a base de usuários </p>
+
+## 5.3 Dados
+<p>Novos dados serão adquiridos e podem ser utilizados para outros produtos e utilização interna</p>
+
+## 5.4 Direcionamento
+<p>Aumentar o número de usuários para as outras plataformas já existente da quero </p>
 
 
 # 6. Bibliotecas Necessarias (python)

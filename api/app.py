@@ -1,9 +1,11 @@
 import os
+import json
 import pickle
 import openai
 import tiktoken
 import numpy as np
 import pandas as pd
+import requests as re
 from sklearn.cluster import KMeans
 from flask import Flask, jsonify, request
 from openai.embeddings_utils import get_embedding
@@ -13,7 +15,7 @@ app = Flask(__name__)
 def get_credentials():
     os.environ['OPENAI_API_KEY'] = "aaaa"
 
-    openai.organization = 'bbbbb'
+    openai.organization = 'bbb'
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def instancia_kmeans():
@@ -22,14 +24,40 @@ def instancia_kmeans():
 
     return kmeans
 
-def define_modelo():
-    embedding_model = "text-embedding-ada-002"
+def pergunta_chat_gpt(pergunta):
 
-    return embedding_model
+    get_credentials()
+
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": f"{pergunta}"}
+        ]
+    )
+
+
+    return completion.choices[0].message.content
+
+def chat_gpt(descricao):
+
+    get_credentials()
+
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": f"Baseado nessa profissao: {descricao}, retorne nomes de cursos e/ou graducacoes para poder alcancar isso."}
+        ]
+    )
+
+    print(completion.choices[0].message.content)
+
+    return completion.choices[0].message.content
 
 def get_custom_embedding(string):
     
-    embedding = openai.embeddings_utils.get_embedding(string, engine="text-embedding-ada-002")
+    embedding_model = "text-embedding-ada-002"
+
+    embedding = openai.embeddings_utils.get_embedding(string, engine=embedding_model)
  
     return embedding
 
@@ -54,9 +82,7 @@ def recomenda(string):
 
     kmeans = instancia_kmeans()
 
-    print('antes do embedding: ', string)
     embedding = get_custom_embedding(string[0])
-    print('depois do embedding')
 
     matrix = get_matrix(embedding)
 
@@ -66,7 +92,7 @@ def recomenda(string):
 
     new_df = df[df['Cluster'] == predict]
 
-    return new_df
+    return new_df['nome_curso'].values
 
 @app.route('/descricao', methods=['POST'])
 def process_array():
@@ -76,8 +102,24 @@ def process_array():
         print(data)
 
         result = recomenda(data)
+    
+        string = chat_gpt(result)
 
-        return jsonify({'result': result.to_dict(orient='records')}), 200
+        return string
+    
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/pergunta', methods=['POST'])
+def pergunta():
+    try:
+        data = request.get_json()
+        
+        print(data)
+
+        string = pergunta_chat_gpt(data)
+
+        return string
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500

@@ -9,13 +9,15 @@ import requests as re
 from sklearn.cluster import KMeans
 from flask import Flask, jsonify, request
 from openai.embeddings_utils import get_embedding
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins="http://localhost:4200")
+
 
 def get_credentials():
-    os.environ['OPENAI_API_KEY'] = "aaaa"
-
-    openai.organization = 'bbbb'
+    os.environ['OPENAI_API_KEY'] = "apikey"
+    openai.organization = 'org'
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def instancia_kmeans():
@@ -41,7 +43,6 @@ def chat_gpt(descricao):
 
     get_credentials()
 
-    print("chegou aqui")
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -95,27 +96,31 @@ def recomenda(string):
 @app.route('/profession', methods=['POST'])
 def process_array():
     try:
-        data = request.get_json()
-        
-        print(data)
+        description = request.get_json()
+        profession = recomenda(description)[0]
 
-        result = recomenda(data)
-    
-        #string = chat_gpt(result)
-
-
-        return result[0]
+        return jsonify(profession)
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
+@app.route('/courses', methods=['GET'])
+def getCourses():
+    professionName = request.args.get('profession')
+    try:
+        dataFrame = get_data()
+        coursesArrayRow = dataFrame[dataFrame['nome_curso'] == professionName]
+        coursesArray = coursesArrayRow['cursos'].values
+        return jsonify(list(coursesArray))
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 
 @app.route('/pergunta', methods=['POST'])
 def pergunta():
     try:
         data = request.get_json()
         
-        print(data)
-
         string = pergunta_chat_gpt(data)
 
         return f"<p>{string}</p>"

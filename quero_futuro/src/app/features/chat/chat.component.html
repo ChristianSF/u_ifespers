@@ -15,9 +15,8 @@
     <div class="chat__botDiv">
       <form class="chat__botDiv--input" [formGroup]="form">
         <mat-form-field class="chat__botDiv--input-field">
-          <input matInput placeholder="..." formControlName="message" />
+          <input matInput placeholder="Digite sua resposta" formControlName="message" (keyup.enter)="clearInput()"/>
         </mat-form-field>
-  
         <div class="chat__botDiv--send-button">
           <button mat-icon-button (click)="sendMessage()">
             <mat-icon>send</mat-icon>

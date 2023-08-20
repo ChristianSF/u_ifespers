@@ -5,3 +5,8 @@ export interface Message {
     role: RoleEnum;
     loading?: boolean;
 }
+
+export interface Course {
+    title: string;
+    description: string;
+}

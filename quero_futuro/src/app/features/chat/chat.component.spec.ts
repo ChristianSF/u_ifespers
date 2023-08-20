@@ -18,4 +18,10 @@ describe('ChatComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit a $sendMessage event when sendMessage is called', () => {
+    spyOn(component.$sendMessage, 'emit');
+    component.sendMessage();
+    expect(component.$sendMessage.emit).toHaveBeenCalled();
+  });
 });

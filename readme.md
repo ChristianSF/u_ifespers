@@ -52,7 +52,7 @@ Exemplo de visualização:
 
 1. **Coleta de Informações Iniciais do Usuário**: O processo começa com a coleta de informações essenciais do usuário. Perguntamos ao usuário sobre seus interesses pessoais, habilidades, preferências de estilo de vida e como ele enxerga seu dia a dia de trabalho. Essas informações são cruciais para entendermos o perfil do usuário e suas preferências.
 
-2. **Comparação com a Base de Dados de Profissões**: Em seguida, usamos um modelo de semelhança semântica, que é uma ferramenta de processamento de linguagem natural, para comparar as informações fornecidas pelo usuário com nossa extensa base de dados de profissões. O modelo busca correspondências entre as características do usuário e as características típicas associadas a diferentes profissões.
+2. **Comparação com a Base de Dados de Profissões**: Em seguida, usamos um modelo de semelhança semântica, que é uma ferramenta de processamento de linguagem natural, para comparar as informações fornecidas pelo usuário com nossa base de dados de profissões. O modelo busca correspondências entre as características do usuário e as características típicas associadas a diferentes profissões.
 
 3. **Identificação da Profissão Recomendada**: Com base na análise de semelhança semântica, o sistema identifica a profissão que melhor se encaixa com o perfil do usuário. Essa profissão recomendada é escolhida com base na correspondência de características, interesses e estilo de vida.
 
@@ -60,7 +60,7 @@ Exemplo de visualização:
 
 5. **Sugestão de Cursos para Alcançar a Profissão**: Além de recomendar a profissão, o sistema também sugere os cursos e qualificações necessários para que o usuário possa um dia alcançar a profissão recomendada. Isso pode incluir cursos acadêmicos, treinamentos específicos ou certificações.
 
-Em resumo, o fluxograma do projeto começa com a coleta de informações do usuário, passa pela análise de semelhança semântica para sugerir a profissão mais adequada e, em seguida, oferece orientações sobre os cursos necessários para seguir essa carreira. É um processo abrangente que visa ajudar os usuários a tomar decisões informadas sobre suas trajetórias profissionais com base em seus interesses e habilidades.</p>
+Em resumo, o fluxograma do projeto começa com a coleta de informações do usuário, passa pela análise de semelhança semântica para sugerir a profissão mais adequada e, em seguida, oferece orientações sobre os cursos necessários para seguir essa carreira. </p>
 
 # 5. Monetizacao 
 

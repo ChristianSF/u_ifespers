@@ -7,6 +7,7 @@ import { HomeModule } from './features/home/home.module';
 import { ChatModule } from './features/chat/chat.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotfoundComponent } from './features/notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NotfoundComponent } from './features/notfound/notfound.component';
     ChatModule,
     HomeModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

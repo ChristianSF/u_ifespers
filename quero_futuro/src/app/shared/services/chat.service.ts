@@ -1,15 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { Message } from '../interfaces/chat.interface';
-import { RoleEnum } from '../enums/chat.enum';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChatService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   getCompletion(messages: Message[]): Observable<Message[]> {
-    return of([...messages, { role: RoleEnum.SYSTEM, content: 'fodasse', loading: false }]);
+    const headers = new HttpHeaders({
+      param: JSON.stringify(messages),
+    });
+
+    return this.httpClient
+      .get<Message[]>(`${environment.apiBaseUrl}teste`, { headers })
+      .pipe(
+        map((resp) => {
+          console.warn(resp);
+          
+          return resp;
+        })
+      );
   }
 }
